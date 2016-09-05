@@ -1,6 +1,5 @@
-#/usr/bin/env python
+# /usr/bin/env python
 import uuid
-import os
 from setuptools import setup, find_packages
 from pip.req import parse_requirements
 
@@ -21,8 +20,8 @@ setup(
     name="django-geodata",
     version=geodata.__version__,
     description="Geo data database structure for the Django web framework.",
-    author="Urtzi Odriozola",
-    author_email="urtzi.odriozola",
+    author="Urtzi Odriozola (Code Syntax http://codesyntax.com)",
+    author_email="uodriozola@codesyntax.com",
     url="https://github.com/codesyntax/django-geodata",
     packages=find_packages(),
     include_package_data=True,

@@ -21,6 +21,8 @@ def generate_perimeter(geo_choice):
                             pol = pol.union(polygon)
                         except:
                             pass
+                for polygon in place.getPolygons():
+                    polygon.delete()
             try:
                 coords = ' '.join(['%s,%s' % (a[0], a[1]) for a in pol.exterior.coords])
                 poly = Polygon()
