@@ -1,0 +1,45 @@
+#/usr/bin/env python
+import uuid
+import os
+from setuptools import setup, find_packages
+from pip.req import parse_requirements
+
+import geodata
+
+
+def get_requirements(source):
+
+    try:
+        install_reqs = parse_requirements(source, session=uuid.uuid1())
+    except TypeError:
+        # Older version of pip.
+        install_reqs = parse_requirements(source)
+    required = set([str(ir.req) for ir in install_reqs])
+    return required
+
+setup(
+    name="django-geodata",
+    version=geodata.__version__,
+    description="Geo data database structure for the Django web framework.",
+    author="Urtzi Odriozola",
+    author_email="urtzi.odriozola",
+    url="https://github.com/codesyntax/django-geodata",
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    classifiers=['Development Status :: 5 - Production/Stable',
+                 'Environment :: Web Environment',
+                 'Framework :: Django',
+                 'Intended Audience :: Developers',
+                 'License :: OSI Approved :: BSD License',
+                 'Operating System :: OS Independent',
+                 'Programming Language :: Python',
+                 'Programming Language :: Python :: 2.7',
+                 'Programming Language :: Python :: 3',
+                 'Programming Language :: Python :: 3.2',
+                 'Programming Language :: Python :: 3.3',
+                 'Programming Language :: Python :: 3.4',
+                 'Programming Language :: Python :: 3.5',
+                 'Topic :: Utilities'],
+    install_requires=get_requirements('requirements.txt'),
+)
