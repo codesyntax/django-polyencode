@@ -3,8 +3,6 @@ import uuid
 from setuptools import setup, find_packages
 from pip.req import parse_requirements
 
-import geodata
-
 
 def get_requirements(source):
 
@@ -18,7 +16,7 @@ def get_requirements(source):
 
 setup(
     name="django-geodata",
-    version=geodata.__version__,
+    version="1.0",
     description="Geo data database structure for the Django web framework.",
     author="Urtzi Odriozola (Code Syntax http://codesyntax.com)",
     author_email="uodriozola@codesyntax.com",
