@@ -14,6 +14,7 @@ class PlaceAdmin(admin.ModelAdmin):
     ordering = ('name', 'geotype')
     search_fields = ['name', ]
     list_filter = ('geotype',)
+    prepopulated_fields = {'slug': ('name',)}
     inlines = [PolygonInline, ]
 
 admin.site.register(Place, PlaceAdmin)

@@ -5,13 +5,13 @@ GEOTYPE_CHOICES = ((0, ''), (1, _('District / Neighborhood')), (2, _('Town / Cit
 
 
 class Place(models.Model):
-    name = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(verbose_name=_("Name"), max_length=255, null=True, blank=True)
     slug = models.SlugField(unique=True, db_index=True)
-    geotype = models.IntegerField(default=0, db_index=True, choices=GEOTYPE_CHOICES)
-    notes = models.TextField(null=True, blank=True)
-    lat = models.FloatField(default=0)
-    lon = models.FloatField(default=0)
-    parent = models.ForeignKey('self', blank=True, null=True, related_name='child_set', on_delete=models.SET_NULL)
+    geotype = models.IntegerField(verbose_name=_("Type"), default=0, db_index=True, choices=GEOTYPE_CHOICES)
+    notes = models.TextField(verbose_name=_("Notes"), null=True, blank=True)
+    lat = models.FloatField(verbose_name=_("Latitude"), default=0)
+    lon = models.FloatField(verbose_name=_("Longitude"), default=0)
+    parent = models.ForeignKey('self', blank=True, null=True, related_name='child_set', on_delete=models.SET_NULL, verbose_name=_("Parent"))
 
     added = models.DateField(_('Added'), auto_now_add=True)
     modified = models.DateField(_('Modified'), auto_now=True)
@@ -50,16 +50,16 @@ class Place(models.Model):
 
 
 class Polygon(models.Model):
-    tokia = models.ForeignKey(Place)
+    place = models.ForeignKey(Place, verbose_name=_("Place"))
 
-    limits = models.TextField(null=True, blank=True)
-    is_visible = models.BooleanField(default=1)
-    is_exterior = models.BooleanField(default=1)
+    limits = models.TextField(verbose_name=_("Limits"), null=True, blank=True)
+    is_visible = models.BooleanField(verbose_name=_("Is visible"), default=1)
+    is_exterior = models.BooleanField(verbose_name=_("Is exterior"), default=1)
 
-    encode_points = models.TextField(null=True, blank=True)
-    encode_levels = models.TextField(null=True, blank=True)
-    encode_zoomfactor = models.CharField(max_length=20, blank=True, null=True)
-    encode_numlevels = models.CharField(max_length=20, blank=True, null=True)
+    encode_points = models.TextField(verbose_name=_("Encode points"), null=True, blank=True)
+    encode_levels = models.TextField(verbose_name=_("Encode levels"), null=True, blank=True)
+    encode_zoomfactor = models.CharField(verbose_name=_("Encode zoom factor"), max_length=20, blank=True, null=True)
+    encode_numlevels = models.CharField(verbose_name=_("Encode number levels"), max_length=20, blank=True, null=True)
 
     added = models.DateField(_('Added'), auto_now_add=True)
     modified = models.DateField(_('Modified'), auto_now=True)
