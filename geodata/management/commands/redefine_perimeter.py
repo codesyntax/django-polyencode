@@ -53,4 +53,4 @@ class Command(BaseCommand):
         parser.add_argument('-gtype', '--geotype', type=int, help='Calculate this geo type places')
 
     def handle(self, *args, **options):
-        generate_perimeter(geo_choice=options.get('username', None))
+        generate_perimeter(geo_choice=options.get('geotype', None))

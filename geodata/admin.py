@@ -9,12 +9,12 @@ class PolygonInline(admin.TabularInline):
 
 
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'geotype', 'parent', 'countPolygonsEx', 'countPolygonsIn', 'countPoints')
-    list_display_links = ('name',)
-    ordering = ('name', 'geotype')
-    search_fields = ['name', ]
+    list_display = ('code', 'local_lang_name', 'country_lang_name', 'official_name', 'lang_academ_name', 'geotype', 'parent', 'lat', 'lon', 'countPolygons', 'countPoints')
+    list_display_links = ('code', 'local_lang_name')
+    ordering = ('local_lang_name', 'geotype')
+    search_fields = ['local_lang_name', 'country_lang_name', 'official_name', 'lang_academ_name']
     list_filter = ('geotype',)
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug': ('local_lang_name',)}
     inlines = [PolygonInline, ]
 
 admin.site.register(Place, PlaceAdmin)

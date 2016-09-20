@@ -1,5 +1,3 @@
-from django.db.models.signals import pre_save
-from .models import Polygon
 import gpolyencode
 
 
@@ -17,11 +15,9 @@ def encode(limits):
 
 
 def encode_limits(sender, instance, **kwargs):
-    encoded = encode(instance.limiteak)
+    encoded = encode(instance.limits)
     instance.encode_points = encoded['points']
     instance.encode_levels = encoded['levels']
     instance.encode_zoomfactor = encoded['zoomFactor']
     instance.encode_numlevels = encoded['numLevels']
     return 1
-
-pre_save.connect(encode_limits, sender=Polygon)

@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
                 ('encode_numlevels', models.CharField(blank=True, max_length=20, null=True)),
                 ('added', models.DateField(auto_now_add=True, verbose_name='Added')),
                 ('modified', models.DateField(auto_now=True, verbose_name='Modified')),
-                ('tokia', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='geodata.Place')),
+                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='geodata.Place')),
             ],
             options={
                 'verbose_name': 'Polygon',
