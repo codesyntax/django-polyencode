@@ -6,16 +6,15 @@ try: # for pip >= 10
 except ImportError: # for pip <= 9.0.3
     from pip.req import parse_requirements
 
-
 def get_requirements(source):
-
     try:
         install_reqs = parse_requirements(source, session=uuid.uuid1())
     except TypeError:
         # Older version of pip.
         install_reqs = parse_requirements(source)
-    required = set([str(ir.req) for ir in install_reqs])
-    return required
+    required = sorted(set([str(ir.req) for ir in install_reqs]))
+    return list(required)
+
 
 setup(
     name="django-geodata",
