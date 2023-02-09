@@ -12,12 +12,12 @@ def get_requirements(source):
     except TypeError:
         # Older version of pip.
         install_reqs = parse_requirements(source)
-    required = sorted(set([str(ir.req) for ir in install_reqs]))
+    required = sorted(set([str(ir.requirement) for ir in install_reqs]))
     return list(required)
 
 
 setup(
-    name="django-geodata",
+    name="geodata",
     version="1.0",
     description="Geo data database structure for the Django web framework.",
     author="Urtzi Odriozola (Code Syntax http://codesyntax.com)",
