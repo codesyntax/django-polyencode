@@ -17,8 +17,8 @@ def get_requirements(source):
 
 
 setup(
-    name="geodata",
-    version="1.0",
+    name="django-polyenconde",
+    version="2.0",
     description="Geo data database structure for the Django web framework.",
     author="Urtzi Odriozola (Code Syntax http://codesyntax.com)",
     author_email="uodriozola@codesyntax.com",
@@ -33,12 +33,9 @@ setup(
                  'License :: OSI Approved :: BSD License',
                  'Operating System :: OS Independent',
                  'Programming Language :: Python',
-                 'Programming Language :: Python :: 2.7',
-                 'Programming Language :: Python :: 3',
-                 'Programming Language :: Python :: 3.2',
-                 'Programming Language :: Python :: 3.3',
-                 'Programming Language :: Python :: 3.4',
-                 'Programming Language :: Python :: 3.5',
+                 'Programming Language :: Python :: 3.9',
+                 'Programming Language :: Python :: 3.10',
+                 'Programming Language :: Python :: 3.11',
                  'Topic :: Utilities'],
     install_requires=get_requirements('requirements.txt'),
 )
