@@ -1,7 +1,12 @@
 2.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Include requirements.txt in manifest.in [Gorka Garcia <114485898+garciagorkauni@users.noreply.github.com>]
+
+-  [Gorka Garcia <114485898+garciagorkauni@users.noreply.github.com>]
+
+- [ci skip] [Gorka Garcia <114485898+garciagorkauni@users.noreply.github.com>]
+
 
 
 2.1 (2024-10-23)
