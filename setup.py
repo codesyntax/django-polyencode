@@ -18,7 +18,7 @@ def get_requirements(source):
 
 setup(
     name="django-polyencode",
-    version="2.2.dev0",
+    version="2.2",
     description="Geo data database structure for the Django web framework.",
     author="Urtzi Odriozola (Code Syntax http://codesyntax.com)",
     author_email="uodriozola@codesyntax.com",
