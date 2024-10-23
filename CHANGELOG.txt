@@ -1,7 +1,12 @@
 2.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Update name for python convention [Gorka Garcia <144927018+gorka-cs@users.noreply.github.com>]
+
+-  [Gorka Garcia <114485898+garciagorkauni@users.noreply.github.com>]
+
+- [ci skip] [Gorka Garcia <114485898+garciagorkauni@users.noreply.github.com>]
+
 
 
 2.2 (2024-10-23)
