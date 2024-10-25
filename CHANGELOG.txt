@@ -1,7 +1,12 @@
 2.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Change name to django_polyencode [Gorka Garcia <144927018+gorka-cs@users.noreply.github.com>]
+
+-  [Gorka Garcia <144927018+gorka-cs@users.noreply.github.com>]
+
+- [ci skip] [Gorka Garcia <144927018+gorka-cs@users.noreply.github.com>]
+
 
 
 2.3 (2024-10-23)
