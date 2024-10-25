@@ -1,6 +1,6 @@
-# django-polyencode
+# django_polyencode
 
-`django-polyencode` is a python library designed to manage and handle geographical data efficiently within Django projects. It provides tools to store, query, and manipulate geospatial information, making it easy to integrate location-based features in your Django applications.
+`django_polyencode` is a python library designed to manage and handle geographical data efficiently within Django projects. It provides tools to store, query, and manipulate geospatial information, making it easy to integrate location-based features in your Django applications.
 
 ## Requirements
 
@@ -8,8 +8,8 @@
 
 ## Installation
 
-To install `django-polyencode`, simply add it to your project using pip:
+To install `django_polyencode`, simply add it to your project using pip:
 
 ```bash
-$ pip install django-polyencode
+$ pip install django_polyencode
 ```
