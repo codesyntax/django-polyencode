@@ -1,4 +1,4 @@
-2.5 (unreleased)
+2.5 (2024-10-28)
 ----------------
 
 - Fix python deprecated problems [Gorka Garcia <144927018+gorka-cs@users.noreply.github.com>]
