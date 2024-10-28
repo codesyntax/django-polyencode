@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import pre_save
 from .signals import encode_limits
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext_lazy as _
 
 GEOTYPE_CHOICES = ((0, _('Consortium')), (1, _('District / Neighborhood')), (2, _('Town / City')), (3, _('Valley / Region')), (4, _('Province')), (5, _('State')), (6, _('Country')))
 
@@ -61,8 +61,8 @@ class Place(models.Model):
 
 
 class Polygon(models.Model):
-    place = models.ForeignKey(Place, verbose_name=_("Place"))
-
+    place = models.ForeignKey(Place, verbose_name=_("Place"), on_delete=models.CASCADE)
+    
     limits = models.TextField(verbose_name=_("Limits"), null=True, blank=True)
     is_visible = models.BooleanField(verbose_name=_("Is visible"), default=1)
     is_exterior = models.BooleanField(verbose_name=_("Is exterior"), default=1)
