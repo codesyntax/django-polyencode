@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('geodata', '0003_auto_20160912_1403'),
+        ('django_polyencode', '0003_auto_20160912_1403'),
     ]
 
     operations = [

@@ -10,9 +10,6 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
-
     operations = [
         migrations.CreateModel(
             name='Place',
@@ -26,7 +23,7 @@ class Migration(migrations.Migration):
                 ('lon', models.FloatField(default=0)),
                 ('added', models.DateField(auto_now_add=True, verbose_name='Added')),
                 ('modified', models.DateField(auto_now=True, verbose_name='Modified')),
-                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='child_set', to='geodata.Place')),
+                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='child_set', to='django_polyencode.Place')),
             ],
             options={
                 'ordering': ('name',),
@@ -47,7 +44,7 @@ class Migration(migrations.Migration):
                 ('encode_numlevels', models.CharField(blank=True, max_length=20, null=True)),
                 ('added', models.DateField(auto_now_add=True, verbose_name='Added')),
                 ('modified', models.DateField(auto_now=True, verbose_name='Modified')),
-                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='geodata.Place')),
+                ('place', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_polyencode.Place')),
             ],
             options={
                 'verbose_name': 'Polygon',
